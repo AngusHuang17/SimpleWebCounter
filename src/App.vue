@@ -145,6 +145,28 @@ export default {
       this.m = 0
       this.s = 0
       this.gDisplayTime = '00:00:00'
+    },
+    enterFunc () {
+      if (this.Sig1 && !this.Sig2) {
+        this.countupFunc()
+      }
+    },
+    spaceFunc () {
+      if (!this.Sig1 && this.Sig2) {
+        this.pauseFunc()
+      } else if (this.Sig1 && this.Sig2) {
+        this.resumeFunc()
+      } else {}
+    }
+  },
+  mounted () {
+    let that = this
+    window.onkeyup = function (e) {
+      if (e.keyCode === 13) {
+        that.enterFunc()
+      } else if (e.keyCode === 32) {
+        that.spaceFunc()
+      } else {}
     }
   }
 }
