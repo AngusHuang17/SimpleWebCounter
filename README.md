@@ -1,6 +1,6 @@
 # my-counter
 
-> A simple web counter
+> A simple web counter created by vue-cli and webpack
 
 ## Build Setup
 
